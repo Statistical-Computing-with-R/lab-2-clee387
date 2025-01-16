@@ -1,10 +1,14 @@
 ---
 title: "Lab 2: Exploring Rodents with `ggplot2`"
-author: "Your name here!"
+author: "Charlotte Lee"
+date: "1/16/25"
 format: html
 editor: source
+error: true
 embed-resources: true
 code-tools: true
+code-fold: true
+include: false
 ---
 
 # Part 1: GitHub Workflow
@@ -124,9 +128,9 @@ for different types of plots:
 #| eval: false
 #| label: ggplot-template-code
 
-ggplot(data = <DATA>,
-       mapping = aes(<VARIABLE MAPPINGS>)) +
-  <GEOM_FUNCTION>()
+#ggplot(data = <DATA>,
+  #     mapping = aes(<VARIABLE MAPPINGS>)) +
+  #<GEOM_FUNCTION>()
 ```
 
 Let's get started!
