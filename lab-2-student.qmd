@@ -3,12 +3,14 @@ title: "Lab 2: Exploring Rodents with `ggplot2`"
 author: "Charlotte Lee"
 date: "1/16/25"
 format: html
+theme: cerulean
 editor: source
-error: true
 embed-resources: true
 code-tools: true
 code-fold: true
-include: false
+echo: true
+error: false
+
 ---
 
 # Part 1: GitHub Workflow
@@ -66,7 +68,9 @@ In the code chunk below, load in the packages necessary for your analysis. You s
 
 ```{r}
 #| label: setup
-
+#| message: false
+#| error: false
+library(tidyverse)
 ```
 
 # Data Context
@@ -252,9 +256,9 @@ might want to look up the help documentation for `aov()`.
 ```{r}
 #| label: anova
 
-species_mod <- aov()
+#species_mod <- aov()
 
-summary(species_mod)
+#summary(species_mod)
 ```
 
 **18. Based on the results of the ANOVA F-test, draw a conclusion in context of the hypotheses. Make sure to cite appropriate output from above.**
