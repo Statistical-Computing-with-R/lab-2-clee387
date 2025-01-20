@@ -109,9 +109,6 @@ represent:
 
 ```{r}
 #| label: load-data
-library("here")
-library("readr")
-#data_csv <-read_csv(here::here("Wk2_R","lab-2-clee387","data","surveys.csv"))
 
 data <- read.csv("data/surveys.csv")
 rows<-nrow(data)
