@@ -189,9 +189,11 @@ It takes a larger cognitive load to read text that is rotated. It is common prac
 
 ## Boxplots
 
+Got element_text and angle from help sectioin under theme.
 ```{r}
 #| label: boxplot
 
+ggplot(data=data, mapping=aes(x=species, y=weight))+ geom_boxplot(outlier.shape = NA)+ geom_jitter(color="turquoise", alpha=0.5)+labs(x="Species Names", y="Weight in grams",title= "Boxplots")+theme(axis.text.x=element_text(angle=45))
 
 ```
 
@@ -238,7 +240,7 @@ Some people (and journals) prefer for boxplots to be stacked with a specific ori
 
 ```{r}
 #| label: rotated-boxplot
-
+ggplot(data=data, mapping=aes(x=weight, y=species))+ geom_boxplot(outlier.shape = NA)+ geom_jitter(color="turquoise", alpha=0.5)+labs(x="Species Names", y="Weight in grams",title= "Boxplots")
 ```
 
 Notice how vertically stacked boxplots make the species labels more readable
