@@ -273,13 +273,14 @@ might want to look up the help documentation for `aov()`.
 ```{r}
 #| label: anova
 
-#species_mod <- aov()
+species_mod <- aov(weight~species, data=data)
 
-#summary(species_mod)
+summary(species_mod)
 ```
 
 **18. Based on the results of the ANOVA F-test, draw a conclusion in context of the hypotheses. Make sure to cite appropriate output from above.**
 
+Based on a small p-value of 2e-16 (large F=19,916), we have sufficient evidence that at least one rodent species has a different population mean weight from another. 
 
 # Lab 2 Submission
 
