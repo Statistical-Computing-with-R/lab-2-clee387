@@ -1,10 +1,16 @@
 ---
 title: "Challenge 2: Spicing things up with ggplot2"
-author: "Add your name!"
+author: "Charlotte Lee"
+date: "12/19/25"
 format: html
+theme: cerulean
 editor: source
 embed-resources: true
 code-tools: true
+self-contained: true
+code-fold: true
+echo: true
+error: false
 ---
 
 For this week's Challenge, you will have three different options to explore.
@@ -25,6 +31,7 @@ Next, create a setup code chunk to load the packages and read in the
 
 Finally, create another code chunk and paste in your code from Question 14 or Question 15 in Lab 2 -- we will be modifying the box plot of weights by species!
 
+
 # Medium: Ridge Plots
 
 In Lab 2, you used side-by-side **boxplots** to visualize the distribution of 
@@ -43,6 +50,20 @@ The built-in `ggplot()` color scheme may not include the colors you were looking
 for. Don't worry -- there are many other color palettes available to use!
 
 You can change the colors used by `ggplot()` in a few different ways.
+
+```{r}
+#| label: load-data
+
+data <- read.csv("data/surveys.csv")
+```
+
+
+```{r}
+#| label: Color by Genus
+library(ggplot2)
+ggplot(data=data, mapping=aes(x=species, y=weight, color=genus))+ geom_boxplot(outlier.shape = NA)+ geom_jitter( alpha=0.5)+labs(x="Species Names", y="Weight in grams",title= "Boxplots")+theme(axis.text.x=element_text(angle=45))
+
+```
 
 ### Manual Specification
 
@@ -73,12 +94,9 @@ If you are interested in using specific hex colors, I like the [image color pick
 :::
 
 ```{r}
-#| include: false
-surveys |> 
-  ggplot(aes(x = weight, y = species, color = genus)) +
-  geom_boxplot() +
-  scale_color_manual(values = cdPalette_grey) +
-  labs(x = "Weight (g)", y = "", subtitle = "Species", legend = "Genus")
+#| label: Color Manually
+
+ggplot(data=data, mapping=aes(x=species, y=weight, color=genus, fill=genus)) + geom_boxplot(outlier.shape = NA)+ geom_jitter( alpha=0.5)+labs(x="Species Names", y="Weight in grams", title= "Boxplots")+theme(axis.text.x=element_text(angle=45))+ scale_color_brewer(palette="Set1")
 ```
 
 ### Package Specification
@@ -113,6 +131,7 @@ We can add annotation(s) to a `ggplot()` using the `annotate()` function:
 ```{r}
 #| echo: true
 #| label: example-annotation
+#| eval: false
 
 ggplot(data = surveys, 
        mapping = aes(y = species,
