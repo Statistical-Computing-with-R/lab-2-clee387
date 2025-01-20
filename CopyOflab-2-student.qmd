@@ -159,8 +159,8 @@ the $x$-axis) and `hindfoot_length` (on the $y$-axis).**
 #| label: scatterplot
 
 ggplot(data = data,
-       mapping = aes(x=weight,y=hindfoot_length)) +
-  geom_point()+ geom_jitter(stat="identity",position="jitter")
+      mapping = aes(x=weight,y=hindfoot_length)) +
+      geom_point(alpha=0.5)+geom_jitter()+ facet_wrap(~ species)+ labs(x="Weight of each animal in grams", y=NULL, subtitle="Hindfoot Length in mm")
 
 ```
 
